@@ -134,3 +134,33 @@
     transition-delay: $x * 0.2s;
   }
 }
+
+// Media Query Mixins
+
+// Small screen - 500px or less
+@mixin mediaSm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+// Medium screen - 768px or less
+@mixin mediaMd {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+// Large screen - 769px and 1170px
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+// Small screen - 500px or less
+@mixin mediaXL {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
+}
