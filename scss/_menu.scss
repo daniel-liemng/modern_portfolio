@@ -11,6 +11,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
+    // background: set-text-color($primary-color);
     background: #fff;
     @include easeOut;
   }
@@ -117,7 +118,7 @@
     text-transform: uppercase;
     padding: 1rem 0;
     font-weight: 300;
-    color: #fff;
+    color: set-text-color($primary-color);
     text-decoration: none;
     @include easeOut;
 
@@ -132,6 +133,15 @@
 @for $x from 1 through 4 {
   .nav-item:nth-child(#{$x}) {
     transition-delay: $x * 0.2s;
+  }
+}
+
+// Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
   }
 }
 
